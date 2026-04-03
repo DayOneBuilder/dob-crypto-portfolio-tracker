@@ -1,0 +1,6 @@
+interface:
+  display_name: "DOB Crypto Portfolio Tracker"
+  short_description: "Starter crypto portfolio tracker workbook for wallets, transactions, cost basis, and P&L."
+  default_prompt: "Use DOB Crypto Portfolio Tracker by Ben Ison"
+policy:
+  allow_implicit_invocation: true
