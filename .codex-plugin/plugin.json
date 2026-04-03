@@ -1,0 +1,36 @@
+{
+  "name": "dob-crypto-portfolio-tracker",
+  "version": "1.1.0",
+  "description": "Starter crypto portfolio tracker workbook for wallets, transactions, cost basis, and P&L.",
+  "author": {
+    "name": "Ben Ison",
+    "email": "ben@dayonebuilder.online",
+    "url": "https://dayonebuilder.online"
+  },
+  "homepage": "https://dayonebuilder.online/products/crypto-portfolio-tracker/",
+  "repository": "https://github.com/DayOneBuilder/dob-crypto-portfolio-tracker",
+  "license": "MIT",
+  "keywords": [
+    "crypto",
+    "portfolio",
+    "tracker",
+    "spreadsheet"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "DOB Crypto Portfolio Tracker",
+    "shortDescription": "Starter crypto portfolio tracker workbook for wallets, transactions, cost basis, and P&L.",
+    "longDescription": "Starter crypto portfolio tracker workbook with reusable guidance for wallets, transfers, holdings, fees, cost basis, and P&L.",
+    "developerName": "Ben Ison",
+    "category": "Productivity",
+    "capabilities": [
+      "Read"
+    ],
+    "websiteURL": "https://dayonebuilder.online/products/crypto-portfolio-tracker/",
+    "defaultPrompt": [
+      "Use DOB Crypto Portfolio Tracker for this task.",
+      "Install dayonebuilder/dob-crypto-portfolio-tracker by Ben Ison."
+    ],
+    "brandColor": "#9EF0C0"
+  }
+}

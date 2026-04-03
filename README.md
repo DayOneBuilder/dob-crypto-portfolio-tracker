@@ -1,57 +1,82 @@
-        # DayOneBuilder Crypto Portfolio Tracker by Ben Ison
+# DayOneBuilder Crypto Portfolio Tracker by Ben Ison
 
-        Starter crypto portfolio tracker workbook for wallets, transactions, cost basis, and P&L.
+Starter crypto portfolio tracker workbook for wallets, transactions, cost basis, and P&L.
 
-        - Product page: https://dayonebuilder.online/products/crypto-portfolio-tracker/
-        - Support / donations: https://checkout.dayonebuilder.online/donate/crypto-portfolio-tracker
-        - Direct free download: https://dayonebuilder.online/downloads/dayonebuilder-crypto-portfolio-tracker.zip
+- Product page: https://dayonebuilder.online/products/crypto-portfolio-tracker/
+- Direct file: https://dayonebuilder.online/downloads/dayonebuilder-crypto-portfolio-tracker.zip
+- Support future updates: https://checkout.dayonebuilder.online/donate/crypto-portfolio-tracker
 
-        ## Install with your agent
+> Shorthand phrase: `Install dayonebuilder/dob-crypto-portfolio-tracker by Ben Ison.`
+>
+> Treat that phrase as a convenience prompt, not as the only documented install contract.
 
-        Preferred phrase:
+## The least noisy setup
 
-        ```text
-        Install dayonebuilder/dob-crypto-portfolio-tracker by Ben Ison.
-        ```
+### Codex
 
-        This repo is named for agent discovery and installability:
-        - GitHub repo: `DayOneBuilder/dob-crypto-portfolio-tracker`
-        - repo-scoped skill for Codex: `.agents/skills/dob-crypto-portfolio-tracker`
-        - repo-scoped skill for Claude Code: `.claude/skills/dob-crypto-portfolio-tracker`
+```bash
+git clone https://github.com/DayOneBuilder/dob-crypto-portfolio-tracker.git
+cd dob-crypto-portfolio-tracker
+codex
+```
 
-        If your agent does not infer the shell steps automatically yet, the honest fallback is:
+Codex auto-discovers the repo-scoped skill from `.agents/skills/` when you launch Codex inside this repository.
 
-        ```bash
-        git clone https://github.com/DayOneBuilder/dob-crypto-portfolio-tracker.git
-        cd dob-crypto-portfolio-tracker
-        ./install.sh
-        ```
+This repo also ships:
+- `.codex-plugin/plugin.json`
+- `.agents/plugins/marketplace.json`
 
-        ## What install.sh does
+So if you prefer Codex's plugin directory, you can load this repo as a local plugin source instead of copying files into your home directory.
 
-        - installs the skill into `~/.agents/skills/dob-crypto-portfolio-tracker` for Codex
-        - installs the same skill into `~/.claude/skills/dob-crypto-portfolio-tracker` for Claude Code
-        - copies bundled assets into `~/.dayonebuilder/dob-crypto-portfolio-tracker/assets`
-        - installs a helper launcher at `~/.local/bin/dob-crypto-portfolio-tracker`
+### Claude Code
 
-        ## Test after install
+```bash
+git clone https://github.com/DayOneBuilder/dob-crypto-portfolio-tracker.git
+cd dob-crypto-portfolio-tracker
+claude --plugin-dir .
+```
 
-        ```bash
-        ~/.local/bin/dob-crypto-portfolio-tracker --help
-        ```
+Claude Code loads the plugin from `.claude-plugin/plugin.json` when you launch it with `--plugin-dir .`.
 
-        Example prompts for your agent:
+## Optional personal install
 
-        - `Install dayonebuilder/dob-crypto-portfolio-tracker by Ben Ison.`
-- `Use DOB Crypto Portfolio Tracker to create a fresh tracker workbook in ./ops/portfolio.xml.`
-- `Use DOB Crypto Portfolio Tracker to explain how to log a bridge, a staking reward, and an LP withdrawal.`
+If you want a standalone personal install outside the repo, use:
 
-        ## What is inside the repo
+```bash
+./install.sh
+```
 
-        - `assets/crypto-portfolio-tracker-starter.xml` — the starter workbook
-- `skills/dob-crypto-portfolio-tracker/` — installable Agent Skill for Codex and Claude Code
-- `bin/new-tracker.sh` — creates a fresh tracker workbook at your target path
+What it does:
+- detects `~/.codex/skills` vs `~/.agents/skills` for Codex standalone installs
+- installs the self-contained skill into the detected Codex location
+- installs the same self-contained skill into `~/.claude/skills/`
+- installs a helper launcher into `~/.local/bin/dob-crypto-portfolio-tracker`
 
-        ## How to use it after install
+Personal uninstall:
 
-        Use the installed skill to create a fresh workbook, then use the bundled guidance to fill wallet, transaction, holdings, and dashboard tabs correctly.
+```bash
+./uninstall.sh
+```
+
+## Why this repo is structured this way
+
+The product has to work in three ways without surprise:
+1. **Repo-scoped Codex use** with no global writes
+2. **Claude plugin use** with `--plugin-dir .`
+3. **Optional standalone install** when you really want a personal global copy
+
+To make that work, the skill is self-contained under `skills/dob-crypto-portfolio-tracker/`. The helper script and any required files live with the skill instead of depending on a separate asset copy in `~/.dayonebuilder/`.
+
+## Quick checks
+
+Repo-local helper:
+
+```bash
+bin/new-tracker.sh ./ops/portfolio.xml
+```
+
+Standalone launcher after `./install.sh`:
+
+```bash
+~/.local/bin/dob-crypto-portfolio-tracker --help
+```

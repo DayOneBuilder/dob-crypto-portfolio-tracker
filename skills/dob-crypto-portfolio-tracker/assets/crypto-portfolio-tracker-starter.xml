@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<?mso-application progid="Excel.Sheet"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:o="urn:schemas-microsoft-com:office:office"
+ xmlns:x="urn:schemas-microsoft-com:office:excel"
+ xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:html="http://www.w3.org/TR/REC-html40">
+ <DocumentProperties xmlns="urn:schemas-microsoft-com:office:office">
+  <Author>Ben v2</Author>
+  <Created>2026-04-02T06:00:00Z</Created>
+ </DocumentProperties>
+ <Styles>
+  <Style ss:ID="Default" ss:Name="Normal">
+    <Alignment ss:Vertical="Bottom"/>
+    <Borders/>
+    <Font ss:FontName="Calibri" ss:Size="11"/>
+    <Interior/>
+    <NumberFormat/>
+    <Protection/>
+  </Style>
+  <Style ss:ID="title">
+    <Font ss:FontName="Calibri" ss:Size="14" ss:Bold="1"/>
+  </Style>
+  <Style ss:ID="header">
+    <Font ss:FontName="Calibri" ss:Bold="1" ss:Color="#FFFFFF"/>
+    <Interior ss:Color="#17313A" ss:Pattern="Solid"/>
+    <Alignment ss:Vertical="Center" ss:WrapText="1"/>
+  </Style>
+  <Style ss:ID="subheader">
+    <Font ss:FontName="Calibri" ss:Bold="1"/>
+    <Interior ss:Color="#EAF6F2" ss:Pattern="Solid"/>
+  </Style>
+  <Style ss:ID="note">
+    <Alignment ss:Vertical="Top" ss:WrapText="1"/>
+  </Style>
+  <Style ss:ID="currency">
+    <NumberFormat ss:Format="$#,##0.00;[Red]-$#,##0.00"/>
+  </Style>
+  <Style ss:ID="integer">
+    <NumberFormat ss:Format="0"/>
+  </Style>
+  <Style ss:ID="decimal">
+    <NumberFormat ss:Format="0.00000000"/>
+  </Style>
+  <Style ss:ID="date">
+    <NumberFormat ss:Format="yyyy-mm-dd\ hh:mm"/>
+  </Style>
+</Styles>
+ <Worksheet ss:Name="Instructions">
+  <Table ss:ExpandedColumnCount="5" ss:ExpandedRowCount="9">
+   <Column ss:Width="220"/>
+   <Column ss:Width="220"/>
+   <Column ss:Width="220"/>
+   <Column ss:Width="220"/>
+   <Column ss:Width="220"/>
+   <Row ss:Height="24"><Cell ss:StyleID="title" ss:MergeAcross="4"><Data ss:Type="String">Crypto Portfolio Tracker Starter</Data></Cell></Row><Row><Cell ss:StyleID="note" ss:MergeAcross="4"><Data ss:Type="String">Use this workbook to track wallets, transfers, P&amp;L, staking rewards, airdrops, and DeFi positions without breaking cost basis.</Data></Cell></Row><Row/><Row><Cell ss:StyleID="note" ss:MergeAcross="4"><Data ss:Type="String">1) Add each wallet or exchange account in the Wallets tab.</Data></Cell></Row><Row><Cell ss:StyleID="note" ss:MergeAcross="4"><Data ss:Type="String">2) Log every meaningful event in Transactions. Use event_type consistently.</Data></Cell></Row><Row><Cell ss:StyleID="note" ss:MergeAcross="4"><Data ss:Type="String">3) Link internal transfers with the same transfer ID so they stay neutral.</Data></Cell></Row><Row><Cell ss:StyleID="note" ss:MergeAcross="4"><Data ss:Type="String">4) Update the Holdings tab with current balances and prices when you reconcile.</Data></Cell></Row><Row><Cell ss:StyleID="note" ss:MergeAcross="4"><Data ss:Type="String">5) Dashboard totals update from Holdings + Transactions inputs.</Data></Cell></Row><Row><Cell ss:StyleID="note" ss:MergeAcross="4"><Data ss:Type="String">6) Suggested event_type values: buy, sell, transfer_in, transfer_out, bridge, stake, unstake, reward, airdrop, LP_deposit, LP_withdraw, borrow, repay.</Data></Cell></Row>
+  </Table>
+ </Worksheet>
+ <Worksheet ss:Name="Wallets">
+  <Table ss:ExpandedColumnCount="7" ss:ExpandedRowCount="2">
+   <Row><Cell ss:StyleID="header"><Data ss:Type="String">wallet_id</Data></Cell><Cell ss:StyleID="header"><Data ss:Type="String">wallet_label</Data></Cell><Cell ss:StyleID="header"><Data ss:Type="String">chain</Data></Cell><Cell ss:StyleID="header"><Data ss:Type="String">wallet_type</Data></Cell><Cell ss:StyleID="header"><Data ss:Type="String">status</Data></Cell><Cell ss:StyleID="header"><Data ss:Type="String">address_or_nickname</Data></Cell><Cell ss:StyleID="header"><Data ss:Type="String">notes</Data></Cell></Row><Row><Cell><Data ss:Type="String">W001</Data></Cell><Cell><Data ss:Type="String">Main EVM Wallet</Data></Cell><Cell><Data ss:Type="String">Ethereum</Data></Cell><Cell><Data ss:Type="String">hot_wallet</Data></Cell><Cell><Data ss:Type="String">active</Data></Cell><Cell><Data ss:Type="String">0x...abcd</Data></Cell><Cell><Data ss:Type="String">Primary trading wallet</Data></Cell></Row>
+  </Table>
+ </Worksheet>
+ <Worksheet ss:Name="Transactions">
+  <Table ss:ExpandedColumnCount="19" ss:ExpandedRowCount="2">
+   <Row><Cell ss:StyleID="header"><Data ss:Type="String">date_time_utc</Data></Cell><Cell ss:StyleID="header"><Data ss:Type="String">wallet_id</Data></Cell><Cell ss:StyleID="header"><Data ss:Type="String">chain</Data></Cell><Cell ss:StyleID="header"><Data ss:Type="String">event_type</Data></Cell><Cell ss:StyleID="header"><Data ss:Type="String">asset_in</Data></Cell><Cell ss:StyleID="header"><Data ss:Type="String">qty_in</Data></Cell><Cell ss:StyleID="header"><Data ss:Type="String">asset_out</Data></Cell><Cell ss:StyleID="header"><Data ss:Type="String">qty_out</Data></Cell><Cell ss:StyleID="header"><Data ss:Type="String">usd_value</Data></Cell><Cell ss:StyleID="header"><Data ss:Type="String">cost_basis_usd</Data></Cell><Cell ss:StyleID="header"><Data ss:Type="String">fee_asset</Data></Cell><Cell ss:StyleID="header"><Data ss:Type="String">fee_qty</Data></Cell><Cell ss:StyleID="header"><Data ss:Type="String">fee_usd</Data></Cell><Cell ss:StyleID="header"><Data ss:Type="String">protocol_or_counterparty</Data></Cell><Cell ss:StyleID="header"><Data ss:Type="String">tx_hash</Data></Cell><Cell ss:StyleID="header"><Data ss:Type="String">linked_transfer_id</Data></Cell><Cell ss:StyleID="header"><Data ss:Type="String">source_of_truth</Data></Cell><Cell ss:StyleID="header"><Data ss:Type="String">notes</Data></Cell><Cell ss:StyleID="header"><Data ss:Type="String">realized_pnl_usd</Data></Cell></Row><Row><Cell><Data ss:Type="String">2026-04-02 00:00</Data></Cell><Cell><Data ss:Type="String">W001</Data></Cell><Cell><Data ss:Type="String">Ethereum</Data></Cell><Cell><Data ss:Type="String">buy</Data></Cell><Cell><Data ss:Type="String">ETH</Data></Cell><Cell ss:StyleID="decimal"><Data ss:Type="Number">1.25</Data></Cell><Cell><Data ss:Type="String">USDC</Data></Cell><Cell ss:StyleID="decimal"><Data ss:Type="Number">2500.0</Data></Cell><Cell ss:StyleID="currency"><Data ss:Type="Number">2500.0</Data></Cell><Cell ss:StyleID="currency"><Data ss:Type="Number">2500.0</Data></Cell><Cell><Data ss:Type="String">ETH</Data></Cell><Cell ss:StyleID="decimal"><Data ss:Type="Number">0.0042</Data></Cell><Cell ss:StyleID="currency"><Data ss:Type="Number">12.5</Data></Cell><Cell><Data ss:Type="String">Coinbase</Data></Cell><Cell><Data ss:Type="String">0xsamplehash</Data></Cell><Cell><Data ss:Type="String"></Data></Cell><Cell><Data ss:Type="String">exchange_export</Data></Cell><Cell><Data ss:Type="String">Initial lot</Data></Cell><Cell ss:StyleID="currency"><Data ss:Type="Number">0.0</Data></Cell></Row>
+  </Table>
+ </Worksheet>
+ <Worksheet ss:Name="Holdings">
+  <Table ss:ExpandedColumnCount="10" ss:ExpandedRowCount="2">
+   <Row><Cell ss:StyleID="header"><Data ss:Type="String">wallet_id</Data></Cell><Cell ss:StyleID="header"><Data ss:Type="String">chain</Data></Cell><Cell ss:StyleID="header"><Data ss:Type="String">asset</Data></Cell><Cell ss:StyleID="header"><Data ss:Type="String">quantity_now</Data></Cell><Cell ss:StyleID="header"><Data ss:Type="String">current_price_usd</Data></Cell><Cell ss:StyleID="header"><Data ss:Type="String">current_value_usd</Data></Cell><Cell ss:StyleID="header"><Data ss:Type="String">cost_basis_usd</Data></Cell><Cell ss:StyleID="header"><Data ss:Type="String">unrealized_pnl_usd</Data></Cell><Cell ss:StyleID="header"><Data ss:Type="String">last_reconciled_utc</Data></Cell><Cell ss:StyleID="header"><Data ss:Type="String">notes</Data></Cell></Row><Row><Cell><Data ss:Type="String">W001</Data></Cell><Cell><Data ss:Type="String">Ethereum</Data></Cell><Cell><Data ss:Type="String">ETH</Data></Cell><Cell ss:StyleID="decimal"><Data ss:Type="Number">1.25</Data></Cell><Cell ss:StyleID="currency"><Data ss:Type="Number">2000.0</Data></Cell><Cell ss:StyleID="currency" ss:Formula="=RC[-2]*RC[-1]"><Data ss:Type="Number">2500.0</Data></Cell><Cell ss:StyleID="currency"><Data ss:Type="Number">2500.0</Data></Cell><Cell ss:StyleID="currency" ss:Formula="=RC[-2]-RC[-1]"><Data ss:Type="Number">0.0</Data></Cell><Cell><Data ss:Type="String">2026-04-02 00:00</Data></Cell><Cell><Data ss:Type="String">Update quantity + price during reconciliation</Data></Cell></Row>
+  </Table>
+ </Worksheet>
+ <Worksheet ss:Name="Dashboard">
+  <Table ss:ExpandedColumnCount="3" ss:ExpandedRowCount="7">
+   <Row><Cell ss:StyleID="header"><Data ss:Type="String">Metric</Data></Cell><Cell ss:StyleID="header"><Data ss:Type="String">Value</Data></Cell><Cell ss:StyleID="header"><Data ss:Type="String">Notes</Data></Cell></Row><Row><Cell ss:StyleID="subheader"><Data ss:Type="String">Total portfolio value</Data></Cell><Cell ss:StyleID="currency" ss:Formula="=SUM(Holdings!R2C6:R200C6)"><Data ss:Type="Number">0</Data></Cell><Cell><Data ss:Type="String">Sum of current holdings value</Data></Cell></Row><Row><Cell ss:StyleID="subheader"><Data ss:Type="String">Total cost basis</Data></Cell><Cell ss:StyleID="currency" ss:Formula="=SUM(Holdings!R2C7:R200C7)"><Data ss:Type="Number">0</Data></Cell><Cell><Data ss:Type="String">Sum of tracked cost basis for open holdings</Data></Cell></Row><Row><Cell ss:StyleID="subheader"><Data ss:Type="String">Unrealized P&amp;L</Data></Cell><Cell ss:StyleID="currency" ss:Formula="=SUM(Holdings!R2C8:R200C8)"><Data ss:Type="Number">0</Data></Cell><Cell><Data ss:Type="String">Current value minus cost basis on open holdings</Data></Cell></Row><Row><Cell ss:StyleID="subheader"><Data ss:Type="String">Realized P&amp;L</Data></Cell><Cell ss:StyleID="currency" ss:Formula="=SUM(Transactions!R2C19:R500C19)"><Data ss:Type="Number">0</Data></Cell><Cell><Data ss:Type="String">Manual or imported realized exits</Data></Cell></Row><Row><Cell ss:StyleID="subheader"><Data ss:Type="String">Total fees</Data></Cell><Cell ss:StyleID="currency" ss:Formula="=SUM(Transactions!R2C13:R500C13)"><Data ss:Type="Number">0</Data></Cell><Cell><Data ss:Type="String">Gas + exchange fees recorded in Transactions</Data></Cell></Row><Row><Cell ss:StyleID="subheader"><Data ss:Type="String">Active wallets</Data></Cell><Cell ss:StyleID="integer" ss:Formula="=COUNTA(Wallets!R2C1:R200C1)"><Data ss:Type="Number">0</Data></Cell><Cell><Data ss:Type="String">Wallet count excluding header</Data></Cell></Row>
+  </Table>
+ </Worksheet>
+</Workbook>

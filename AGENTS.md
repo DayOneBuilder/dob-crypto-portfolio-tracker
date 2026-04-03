@@ -1,14 +1,16 @@
 # AGENTS.md
 
-This repository is an installable DayOneBuilder product repo for `dob-crypto-portfolio-tracker`.
+This repository is a shared agent product repo for `dob-crypto-portfolio-tracker`.
 
-If the user asks to install or set up this repo:
-1. Run `./install.sh` from the repo root.
-2. Verify these paths exist afterward:
-   - `~/.agents/skills/dob-crypto-portfolio-tracker/SKILL.md`
-   - `~/.claude/skills/dob-crypto-portfolio-tracker/SKILL.md`
-   - `~/.local/bin/dob-crypto-portfolio-tracker`
-3. Mention the installed helper command: `~/.dayonebuilder/dob-crypto-portfolio-tracker/bin/new-tracker.sh [target-file-or-directory]`
+Packaging contract:
+- Codex repo-scoped path: `.agents/skills/dob-crypto-portfolio-tracker`
+- Codex plugin manifest: `.codex-plugin/plugin.json`
+- Codex local marketplace: `.agents/plugins/marketplace.json`
+- Claude plugin manifest: `.claude-plugin/plugin.json`
+- Self-contained skill logic lives under `skills/dob-crypto-portfolio-tracker/`
 
-If the user asks to create local files from this product, use the helper in `bin/new-tracker.sh`.
-Keep the work productized. Do not invent hosted services or extra dependencies.
+When changing this repo:
+1. Keep the skill self-contained. If someone installs only the skill folder, it should still work.
+2. Do not hardcode a single Codex home path. Fallback installers must handle `~/.codex/skills` and `~/.agents/skills`.
+3. Keep repo-scoped use as the least noisy path: Codex in-repo, Claude with `--plugin-dir .`.
+4. Treat `install.sh` as optional convenience, not the only way the product works.
